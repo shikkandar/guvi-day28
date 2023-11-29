@@ -20,6 +20,7 @@
 }
 img{
   width: 300px ;
+  border-radius: 10px;
 }
 .img-des{
   width: 700px;

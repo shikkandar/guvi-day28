@@ -4,8 +4,9 @@ import { CourseContext } from './CourseContext';
 const Body = () => {
   const { products } = useContext(CourseContext);
 
-  // Initialize an array to store quantities for each product
-  const [quantities, setQuantities] = useState(Array(products.length).fill(1));
+const remove=(e)=>{
+  console.log(e);
+}
 
   const generateOption = () => {
     const option = [];
@@ -15,6 +16,8 @@ const Body = () => {
     return option;
   };
 
+  // Initialize an array to store quantities for each product
+  const [quantities, setQuantities] = useState(Array(products.length).fill(1));
   const multi = (e, index) => {
     const selectedVal = e.target.value;
 
@@ -30,8 +33,8 @@ const Body = () => {
     <div className='container d-flex flex-column gap-5 my-5'>
       {products.map((data, i) => (
         <div key={i} className='main'>
-          <div key={i} className='d-flex justify-content-between'>
-            <div className='img-des d-flex align-items-center gap-5'>
+          <div key={i} className='d-flex justify-content-between '>
+            <div className='img-des d-flex align-items-center  gap-5'>
               <div className='image'>
                 <img src={data.thumbnail} alt="" />
               </div>
@@ -52,7 +55,7 @@ const Body = () => {
                 </div>
               </div>
               <div className="remove-btn align-self-end">
-                <button className='btn btn-warning'>Remove</button>
+                <button className='btn btn-warning' onClick={remove} >Remove</button>
               </div>
             </div>
           </div>
